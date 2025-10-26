@@ -1,7 +1,7 @@
-import { GoogleGenerativeAI } from "@google/generative-ai"; // ✅ Corrected import
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // ------------------------------
-// Define Data Interfaces
+// Data Interfaces
 // ------------------------------
 interface ForecastData {
   month: string;
@@ -45,7 +45,6 @@ if (!API_KEY) {
   throw new Error("GEMINI_API_KEY environment variable not set.");
 }
 
-// ✅ Use correct Gemini class (GoogleGenerativeAI)
 const ai = new GoogleGenerativeAI(API_KEY);
 
 // ------------------------------
@@ -55,15 +54,16 @@ export const runSimulation = async (
   tariff: number,
   shock: string
 ): Promise<SimulationResult> => {
-  const scenarioName = `${tariff}% Tariff` + (shock !== "None" ? ` + ${shock}` : "");
+  const scenarioName = `${tariff}% Tariff${shock !== "None" ? ` + ${shock}` : ""}`;
 
+  // Optional descriptive instruction
   let shockInstruction = "";
   if (shock !== "None") {
-    shockInstruction = `\n- **Exogenous Shock Event:** In addition to the tariff, model the impact of the following event: "${shock}". This should be reflected as a deviation in the scenario forecast compared to a standard tariff-only model.`;
+    shockInstruction = `In addition to the tariff, the model should account for the effect of the external shock: "${shock}". Reflect this as a deviation from the standard tariff-only forecast scenario.`;
   }
 
   // ------------------------------
-  // Mock Data Generator
+  // Generate Mock Forecast Data
   // ------------------------------
   const generateMockData = (): Omit<
     SimulationResult,
@@ -110,6 +110,27 @@ export const runSimulation = async (
     const consumerPriceImpact = tariff * 0.3 + (Math.random() * 0.2 - 0.1);
     const farmerPriceChange = tariff * 0.4 + (Math.random() * 0.2 - 0.1);
 
+    // ------------------------------
+    // Enhanced Human-Readable Output
+    // ------------------------------
+    const recommendations = `
+Policy Recommendations:
+1. Introduce the ${tariff}% tariff gradually to allow the market to adapt smoothly.
+2. Closely monitor international palm oil price fluctuations to anticipate import cost pressures.
+3. Provide financial or technical support to domestic oilseed farmers to strengthen production capacity.
+4. Track consumer price trends; if prices rise sharply, implement temporary subsidies for essential products.
+5. Conduct a comprehensive policy review after six months to evaluate trade performance and food security impact.
+`;
+
+    const shapSummary = `
+Key Drivers and Explainability:
+- Tariff Rate (${(tariff * 0.1).toFixed(2)}): The main factor reducing import volume and increasing domestic prices.
+- Global Supply Conditions (${(Math.random() * 0.5 - 0.25).toFixed(2)}): Moderate influence depending on international availability and cost.
+- Domestic Production (${(Math.random() * 0.3).toFixed(2)}): Limited short-term effect but essential for long-term stability.
+- Exchange Rate (${(Math.random() * 0.4 - 0.2).toFixed(2)}): Affects import cost and competitiveness of local producers.
+- Consumer Demand (${(Math.random() * 0.2).toFixed(2)}): Low elasticity; demand remains relatively steady even with price increases.
+`;
+
     return {
       forecasts,
       metrics: {
@@ -118,31 +139,13 @@ export const runSimulation = async (
         farmerPriceChange: parseFloat(farmerPriceChange.toFixed(2)),
         selfRelianceDelta:
           tariff >= 25
-            ? "Significantly accelerated"
+            ? "Significantly improved self-reliance in domestic oilseed production"
             : tariff >= 15
-            ? "Moderately accelerated"
-            : "Minimal impact",
+            ? "Moderate improvement in domestic production capacity"
+            : "Minimal effect on self-reliance and import dependency",
       },
-      recommendations: `* Implement the ${tariff}% tariff gradually to monitor market response.
-* Monitor global palm oil prices for potential supply chain impacts.
-* Support domestic oilseed farmers with complementary policies.
-* Assess consumer price impacts and consider targeted subsidies if needed.
-* Review the policy after 6 months to evaluate effectiveness.`,
-      shapSummary: `**Tariff Rate:** (${(tariff * 0.1).toFixed(
-        2
-      )}) — Primary driver of import reduction and domestic price increases.
-**Global Supply Conditions:** (${(Math.random() * 0.5 - 0.25).toFixed(
-        2
-      )}) — Moderate impact from international market trends.
-**Domestic Production:** (${(Math.random() * 0.3).toFixed(
-        2
-      )}) — Limited short-term influence.
-**Exchange Rate:** (${(Math.random() * 0.4 - 0.2).toFixed(
-        2
-      )}) — Secondary factor affecting import costs.
-**Consumer Demand:** (${(Math.random() * 0.2).toFixed(
-        2
-      )}) — Minimal elasticity in short term.`,
+      recommendations: recommendations.trim(),
+      shapSummary: shapSummary.trim(),
     };
   };
 
@@ -150,7 +153,6 @@ export const runSimulation = async (
   // Simulation Execution
   // ------------------------------
   try {
-    // Use mock data for now (replace with actual Gemini API call in production)
     const mockResult = generateMockData();
 
     return {
@@ -163,8 +165,8 @@ export const runSimulation = async (
     };
   } catch (error) {
     console.error("Error running simulation:", error);
-
     const mockResult = generateMockData();
+
     return {
       ...mockResult,
       scenarioName,
