@@ -75,7 +75,7 @@ const Register: React.FC = () => {
       <div className="max-w-md w-full space-y-8">
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
           <div className="text-center">
-            <div className="mx-auto h-16 w-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+            <div className="mx-auto h-16 w-16 bg-gradient-to-r from-blue-400 to-blue-900 rounded-xl flex items-center justify-center shadow-lg">
               <i className="fas fa-user-plus text-white text-2xl"></i>
             </div>
             <h2 className="mt-6 text-3xl font-bold text-gray-900">
@@ -210,7 +210,7 @@ const Register: React.FC = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-lg transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-blue-400 to-blue-900 hover:from-blue-500 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-lg transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <>

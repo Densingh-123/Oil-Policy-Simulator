@@ -27,7 +27,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-2 rounded-xl shadow-lg group-hover:scale-105 transition duration-200">
+            <div className="bg-gradient-to-r from-blue-400 to-blue-900 text-white p-2 rounded-xl shadow-lg group-hover:scale-105 transition duration-200">
               <i className="fas fa-chart-pie text-xl"></i>
             </div>
             <div>
@@ -45,15 +45,15 @@ const Header: React.FC = () => {
             {navigation.map((item) => {
               const isActive = location.pathname === item.href;
               return (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`flex items-center px-4 py-2 rounded-xl transition duration-200 ${
-                    isActive
-                      ? 'bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 font-semibold border border-blue-200'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
-                  }`}
-                >
+               <Link
+  key={item.name}
+  to={item.href}
+  className={`flex items-center px-4 py-2 rounded-xl transition duration-200 ${
+    isActive
+      ? 'bg-gradient-to-r from-blue-400 to-blue-700 text-white font-semibold'
+      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
+  }`}
+>
                   <i className={`${item.icon} mr-2`}></i>
                   {item.name}
                 </Link>
