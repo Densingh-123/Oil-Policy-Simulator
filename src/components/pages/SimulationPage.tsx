@@ -52,7 +52,10 @@ const SimulationPage: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-300 opacity-20 blur-3xl translate-x-1/3 translate-y-1/3 animate-pulse"></div>
 
       {/* Header */}
-      <div className="w-full text-white py-16 md:py-20 relative z-10 shadow-lg" style={gradientStyle}>
+  <div
+  className="w-full text-white py-16 md:py-20 pb-5 relative z-10 rounded-2xl shadow-lg"
+  style={gradientStyle}
+>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center rounded-2xl">
   <h1 className="text-5xl md:text-6xl font-extrabold mb-4 italic tracking-tight drop-shadow-lg">
     Policy Simulation Lab
@@ -65,7 +68,7 @@ const SimulationPage: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
+     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 relative z-10">
         {/* Tabs */}
         <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl border border-blue-100 mb-10 overflow-hidden">
           <div className="flex flex-wrap border-b border-gray-200">
@@ -239,7 +242,7 @@ const SimulationPage: React.FC = () => {
                             <div className="text-gray-600">Consumer Impact</div>
                           </div>
                           <div className="text-center p-3 bg-gray-50 rounded-lg shadow-inner">
-                            <div className="text-lg font-bold text-purple-600">
+                            <div className="text-lg font-bold text-blue-600">
                               {sim.metrics.selfRelianceDelta.split(' ')[0]}
                             </div>
                             <div className="text-gray-600">Self-Reliance</div>

@@ -50,7 +50,7 @@ const HistoryPage: React.FC = () => {
             </p>
             <Link
               to="/simulation"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition duration-200 inline-flex items-center"
+              className="bg-gradient-to-r from-blue-400 to-blue-900 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition duration-200 inline-flex items-center"
             >
               <i className="fas fa-plus mr-2"></i>
               Run First Simulation
