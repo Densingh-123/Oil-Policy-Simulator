@@ -49,7 +49,7 @@ const SimulationPage: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-indigo-50 to-white relative overflow-hidden">
       {/* Floating Glow Background */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-300 opacity-20 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-300 opacity-20 blur-3xl translate-x-1/3 translate-y-1/3 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-300 opacity-20 blur-3xl translate-x-1/3 translate-y-1/3 animate-pulse"></div>
 
       {/* Header */}
   <div
@@ -60,7 +60,7 @@ const SimulationPage: React.FC = () => {
   <h1 className="text-5xl md:text-6xl font-extrabold mb-4 italic tracking-tight drop-shadow-lg">
     Policy Simulation Lab
   </h1>
-  <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+  <p className="text-xl md:text-2xl italic text-blue-100 max-w-3xl mx-auto leading-relaxed">
     Test different tariff scenarios and analyze their impact on India's palm oil markets using AI-powered economic modeling
   </p>
 </div>
@@ -176,7 +176,7 @@ const SimulationPage: React.FC = () => {
                       <div className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-blue-100">
                         <i className="fas fa-chart-line text-4xl text-blue-500"></i>
                       </div>
-                      <h3 className="text-3xl font-bold text-gray-800">Ready to Simulate Policy Impacts</h3>
+                      <h3 className="text-3xl italic font-bold text-gray-800">Ready to Simulate Policy Impacts</h3>
                       <p className="text-gray-600 text-lg leading-relaxed">
                         Configure a custom tariff scenario or choose a preset above to analyze economic outcomes using AI-driven insights.
                       </p>
@@ -206,7 +206,7 @@ const SimulationPage: React.FC = () => {
               <div className="space-y-8">
                 <div className="text-center py-10">
                   <i className="fas fa-balance-scale text-5xl text-blue-500 mb-4"></i>
-                  <h3 className="text-3xl font-bold text-gray-800 mb-2">Compare Policy Scenarios</h3>
+                  <h3 className="text-3xl font-bold italic text-gray-800 mb-2">Compare Policy Scenarios</h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
                     Review multiple simulations side by side for strategic decision-making.
                   </p>
@@ -279,7 +279,7 @@ const SimulationPage: React.FC = () => {
               <div className="space-y-8">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-3xl font-bold text-gray-800">Simulation History</h3>
+                    <h3 className="text-3xl font-bold italic text-gray-800">Simulation History</h3>
                     <p className="text-gray-600">Review and manage your past simulations</p>
                   </div>
                   <div className="text-sm text-gray-500">

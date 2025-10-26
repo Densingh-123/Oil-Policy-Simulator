@@ -66,7 +66,7 @@ const AnalyticsPage: React.FC = () => {
       <div className="mb-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Market Analytics</h1>
+            <h1 className="text-3xl font-bold italic text-gray-800 mb-2">Market Analytics</h1>
             <p className="text-gray-600">
               Real-time palm oil market data and trends analysis
             </p>
