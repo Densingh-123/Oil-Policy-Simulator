@@ -40,7 +40,7 @@ const LandingPage: React.FC = () => {
         {/* content */}
         <div className="relative container mx-auto px-6 py-20 md:py-32 text-white">
         <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-md">
+            <h1 className="text-5xl italic md:text-6xl font-bold mb-6 leading-tight drop-shadow-md">
               India Palm Oil Policy Simulator
             </h1>
             <p className="text-xl md:text-2xl mb-8 leading-relaxed text-blue-100 drop-shadow-sm">
