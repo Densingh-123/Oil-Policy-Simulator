@@ -11,7 +11,28 @@ import {
 } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { auth, googleProvider, db } from '../services/firebase';
-import { User, AuthContextType } from '../types';
+
+// Define types locally to avoid import issues
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: string;
+  organization: string;
+  createdAt: string;
+  photoURL?: string;
+  emailVerified: boolean;
+}
+
+interface AuthContextType {
+  user: User | null;
+  login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
+  register: (email: string, password: string, name: string, organization?: string) => Promise<{ success: boolean; error?: string }>;
+  loginWithGoogle: () => Promise<{ success: boolean; error?: string }>;
+  logout: () => void;
+  resetPassword: (email: string) => Promise<{ success: boolean; error?: string }>;
+  loading: boolean;
+}
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -219,7 +240,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser(null);
   };
 
-  const value = {
+  const value: AuthContextType = {
     user,
     login,
     register,

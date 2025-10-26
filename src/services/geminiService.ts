@@ -1,5 +1,36 @@
 import { GoogleGenAI } from "@google/genai";
-import { SimulationResult } from '../types';
+
+// Define types locally to avoid import issues
+interface ForecastData {
+  month: string;
+  globalPrice: number;
+  importVolume: number;
+  domesticPrice: number;
+  farmerPriceIndex: number;
+  globalPriceScenario: number;
+  importVolumeScenario: number;
+  domesticPriceScenario: number;
+  farmerPriceIndexScenario: number;
+}
+
+interface SimulationMetrics {
+  importChange: number;
+  consumerPriceImpact: number;
+  farmerPriceChange: number;
+  selfRelianceDelta: string;
+}
+
+interface SimulationResult {
+  forecasts: ForecastData[];
+  metrics: SimulationMetrics;
+  recommendations: string;
+  shapSummary: string;
+  scenarioName: string;
+  tariff: number;
+  shock: string;
+  id: string;
+  timestamp: string;
+}
 
 // Use environment variable for API key
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyAurNoRuPmTNG8pY35f5fq0NvbpNvz3jIs";
@@ -20,8 +51,8 @@ export const runSimulation = async (tariff: number, shock: string): Promise<Simu
 
   // Mock data generation for demonstration
   // In a real application, this would call the actual Gemini API
-  const generateMockData = () => {
-    const forecasts = [];
+  const generateMockData = (): Omit<SimulationResult, 'scenarioName' | 'tariff' | 'shock' | 'id' | 'timestamp'> => {
+    const forecasts: ForecastData[] = [];
     const baseDate = new Date();
     
     for (let i = 0; i < 12; i++) {
@@ -81,7 +112,7 @@ export const runSimulation = async (tariff: number, shock: string): Promise<Simu
       shock,
       id: Date.now().toString(),
       timestamp: new Date().toISOString()
-    } as SimulationResult;
+    };
     
   } catch (error: any) {
     console.error("Error running simulation:", error);
@@ -95,6 +126,6 @@ export const runSimulation = async (tariff: number, shock: string): Promise<Simu
       shock,
       id: Date.now().toString(),
       timestamp: new Date().toISOString()
-    } as SimulationResult;
+    };
   }
 };
