@@ -53,14 +53,15 @@ const SimulationPage: React.FC = () => {
 
       {/* Header */}
       <div className="w-full text-white py-16 md:py-20 relative z-10 shadow-lg" style={gradientStyle}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 italic tracking-tight drop-shadow-lg">
-            Policy Simulation Lab
-          </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Test different tariff scenarios and analyze their impact on India's palm oil markets using AI-powered economic modeling
-          </p>
-        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center rounded-2xl">
+  <h1 className="text-5xl md:text-6xl font-extrabold mb-4 italic tracking-tight drop-shadow-lg">
+    Policy Simulation Lab
+  </h1>
+  <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+    Test different tariff scenarios and analyze their impact on India's palm oil markets using AI-powered economic modeling
+  </p>
+</div>
+
       </div>
 
       {/* Main Content */}
