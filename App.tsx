@@ -1,18 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
-import { AppProvider } from './contexts/AppContext';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
-import LandingPage from './components/pages/LandingPage';
-import SimulationPage from './components/pages/SimulationPage';
-import HistoryPage from './components/pages/HistoryPage';
-import AnalyticsPage from './components/pages/AnalyticsPage';
-import ProfilePage from './components/pages/ProfilePage';
-import AboutPage from './components/pages/AboutPage';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
-import AuthGuard from './components/auth/AuthGuard';
+import { AuthProvider, useAuth } from './src/contexts/AuthContext';
+import { AppProvider } from './src/contexts/AppContext';
+import Header from './src/components/layout/Header';
+import Footer from './src/components/layout/Footer';
+import LandingPage from './src/components/pages/LandingPage';
+import SimulationPage from './src/components/pages/SimulationPage';
+import HistoryPage from './src/components/pages/HistoryPage';
+import AnalyticsPage from './src/components/pages/AnalyticsPage';
+import ProfilePage from './src/components/pages/ProfilePage';
+import AboutPage from './src/components/pages/AboutPage';
+import Login from './src/components/auth/Login';
+import Register from './src/components/auth/Register';
+import AuthGuard from './src/components/auth/AuthGuard';
 import './styles/globals.css';
 
 const AppContent: React.FC = () => {
