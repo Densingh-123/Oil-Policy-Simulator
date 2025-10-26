@@ -6,8 +6,8 @@ const AboutPage: React.FC = () => {
     <div className="max-w-6xl mx-auto">
       {/* Hero Section */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">About PalmTariffSim</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold italic text-gray-800 mb-4">About PalmTariffSim</h1>
+        <p className="text-xl italic text-gray-600 max-w-3xl mx-auto">
           An AI-powered platform for evidence-based policy decisions on palm oil import tariffs, 
           helping India achieve self-reliance in edible oil production.
         </p>
@@ -19,7 +19,7 @@ const AboutPage: React.FC = () => {
           <div className="text-blue-600 text-3xl mb-4">
             <i className="fas fa-bullseye"></i>
           </div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">Our Mission</h3>
+          <h3 className="text-xl font-semibold italic text-gray-800 mb-3">Our Mission</h3>
           <p className="text-gray-600">
             To provide policymakers with accurate, data-driven insights for making informed decisions 
             about palm oil import tariffs that balance farmer welfare, consumer affordability, and 
@@ -32,7 +32,7 @@ const AboutPage: React.FC = () => {
           <div className="text-purple-600 text-3xl mb-4">
             <i className="fas fa-eye"></i>
           </div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">Our Vision</h3>
+          <h3 className="text-xl font-semibold italic text-gray-800 mb-3">Our Vision</h3>
           <p className="text-gray-600">
             A future where India's edible oil sector is resilient, self-reliant, and globally 
             competitive, supported by advanced AI tools that enable evidence-based policy formulation.
@@ -44,7 +44,7 @@ const AboutPage: React.FC = () => {
           <div className="text-green-600 text-3xl mb-4">
             <i className="fas fa-cogs"></i>
           </div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">Technology</h3>
+          <h3 className="text-xl font-semibold italic text-gray-800 mb-3">Technology</h3>
           <p className="text-gray-600">
             Powered by advanced machine learning models, real-time data integration, and 
             sophisticated economic simulations to provide accurate forecasts and policy recommendations.
@@ -54,7 +54,7 @@ const AboutPage: React.FC = () => {
 
       {/* Problem Statement */}
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12 border border-blue-200">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">The Challenge</h2>
+        <h2 className="text-2xl font-bold italic text-gray-800 mb-4">The Challenge</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
@@ -101,7 +101,7 @@ const AboutPage: React.FC = () => {
 
       {/* Features Grid */}
       <div className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Key Features</h2>
+        <h2 className="text-2xl font-bold text-gray-800 italic mb-6 text-center">Key Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div key={index} className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 card-hover">
@@ -117,7 +117,7 @@ const AboutPage: React.FC = () => {
 
       {/* Team Section */}
       <div className="bg-gray-50 rounded-2xl p-8 mb-12">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Research Partners</h2>
+        <h2 className="text-2xl font-bold italic text-gray-800 mb-6 text-center">Research Partners</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {partners.map((partner, index) => (
             <div key={index} className="text-center">
@@ -132,8 +132,8 @@ const AboutPage: React.FC = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-        <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
+      <div className="text-center bg-gradient-to-r from-blue-400 to-blue-900 rounded-2xl p-8 text-white">
+        <h2 className="text-2xl italic font-bold mb-4">Ready to Get Started?</h2>
         <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
           Join policymakers and researchers using our AI-powered simulator for better economic insights 
           and evidence-based decision making.

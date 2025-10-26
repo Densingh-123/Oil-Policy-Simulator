@@ -263,12 +263,12 @@ const SimulationPage: React.FC = () => {
                     <p className="text-gray-500 mb-6">
                       Run at least 2 simulations to compare different policy scenarios.
                     </p>
-                    <button
-                      onClick={() => setActiveTab('simulation')}
-                      className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 hover:scale-105 transition duration-300 font-semibold"
-                    >
-                      Run Simulations
-                    </button>
+                <button
+  onClick={() => setActiveTab('simulation')}
+  className="bg-gradient-to-r from-blue-400 to-blue-900 text-white px-8 py-3 rounded-lg hover:scale-105 transform transition duration-300 font-semibold shadow-lg"
+>
+  Run Simulations
+</button>
                   </div>
                 )}
               </div>

@@ -42,7 +42,7 @@ const HistoryPage: React.FC = () => {
             <div className="w-20 h-20 bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <i className="fas fa-history text-3xl text-blue-500"></i>
             </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-3">
+            <h3 className="text-2xl italic font-semibold text-gray-800 mb-3">
               No Simulations Yet
             </h3>
             <p className="text-gray-600 mb-6">
