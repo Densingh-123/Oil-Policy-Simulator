@@ -13,17 +13,22 @@
     "types": [
       "node"
     ],
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "isolatedModules": true,
     "moduleDetection": "force",
     "allowJs": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "allowImportingTsExtensions": true,
-    "noEmit": true
-  }
+    "allowImportingTsExtensions": false,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
 }
